@@ -1,0 +1,488 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: #000;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 18px;
+    line-height: 1.65;
+    color: #f2f2f2;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+::selection {
+    background: #c00;
+    color: #fff;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid #ff4d4d;
+    outline-offset: 3px;
+}
+
+/* Header */
+header {
+    padding: 2.5rem 1rem 1.5rem;
+}
+
+.brand {
+    display: inline-block;
+    padding: 8px 18px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.brand:hover {
+    background: #fff;
+    color: #000;
+    border-color: #fff;
+}
+
+/* Top navigation */
+.top-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.top-nav a {
+    padding: 4px 2px;
+    color: #b3b3b3;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 0.9rem;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+.top-nav a:hover {
+    color: #fff;
+}
+
+.top-nav a.active {
+    color: #fff;
+    border-color: #c00;
+}
+
+/* Landing menu */
+.home {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 1.5rem 1rem 4rem;
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+}
+
+.menu-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    flex: 0 0 220px;
+    min-height: 260px;
+    padding: 2rem 1.75rem;
+    text-align: left;
+    color: #fff;
+    text-decoration: none;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0));
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    transition: transform 0.25s ease, background 0.25s, border-color 0.25s;
+}
+
+.menu-card:hover {
+    transform: translateY(-6px);
+    background: #111;
+    border-color: #c00;
+}
+
+.menu-index {
+    margin-bottom: auto;
+    color: #ff4d4d;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+}
+
+.menu-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+
+.menu-desc {
+    color: #cfcfcf;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.menu-card.featured {
+    flex-basis: 280px;
+    min-height: 320px;
+    background: #c00;
+    border-color: #c00;
+}
+
+.menu-card.featured:hover {
+    background: #a80000;
+    border-color: #fff;
+}
+
+.menu-card.featured .menu-index {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.menu-card.featured .menu-desc {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* Content pages */
+.page {
+    max-width: 740px;
+    margin: 0 auto;
+    padding: 1.5rem 1.5rem 4rem;
+    text-align: left;
+}
+
+.page h1 {
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #c00;
+}
+
+.lead {
+    margin-bottom: 2rem;
+    color: #e8e8e8;
+    font-size: 1.15rem;
+    font-style: italic;
+}
+
+.content-block {
+    margin-bottom: 2.5rem;
+}
+
+.content-block + .content-block {
+    padding-top: 1.75rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.page h2 {
+    margin-bottom: 0.75rem;
+    padding-left: 0.75rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    border-left: 3px solid #c00;
+}
+
+.content-block > p {
+    margin-bottom: 1rem;
+    color: #dedede;
+}
+
+/* Price list */
+.price-list {
+    list-style: none;
+    margin-bottom: 1rem;
+}
+
+.price-list li {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.price-list li:last-child {
+    border-bottom: none;
+}
+
+.price-name {
+    flex: 0 0 auto;
+}
+
+.price-name .unit {
+    margin-left: 0.15rem;
+    color: #a9a9a9;
+    font-size: 0.85rem;
+}
+
+.price-dots {
+    flex: 1 1 auto;
+    min-width: 2rem;
+    border-bottom: 1px dotted rgba(255, 255, 255, 0.3);
+    transform: translateY(-0.25em);
+}
+
+.price-value {
+    flex: 0 0 auto;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.price-value.sale {
+    color: #ff4d4d;
+}
+
+.price-value small {
+    display: block;
+    color: #b0b0b0;
+    font-size: 0.75rem;
+    font-weight: 400;
+    text-align: right;
+}
+
+.price-list li.price-label {
+    display: block;
+    border-bottom: none;
+    padding-bottom: 0;
+    color: #a9a9a9;
+    font-style: italic;
+}
+
+.note {
+    color: #b9b9b9;
+    font-size: 0.95rem;
+    font-style: italic;
+}
+
+/* Image gallery */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    margin: 1.25rem 0;
+}
+
+.gallery img {
+    display: block;
+    width: 100%;
+    height: auto;
+    background: #111;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: border-color 0.2s;
+}
+
+.gallery img:hover {
+    border-color: #c00;
+}
+
+/* Footer */
+footer {
+    flex-shrink: 0;
+    padding: 2rem 1rem 4rem;
+    color: #8f8f8f;
+    font-size: 0.95rem;
+}
+
+.back {
+    padding-bottom: 1px;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid #c00;
+}
+
+.back:hover {
+    color: #ff4d4d;
+}
+
+.corner-gif {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 40px;
+    height: auto;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Contact panel */
+#contactPanel {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    width: 260px;
+    background: rgba(0, 0, 0, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-right: none;
+    z-index: 100;
+    transform: translateY(-50%);
+    transition: transform 0.35s ease;
+}
+
+#contactPanel.retracted {
+    transform: translateY(-50%) translateX(100%);
+}
+
+#contactToggle {
+    position: absolute;
+    left: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-right: none;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.2s;
+    z-index: 101;
+}
+
+#contactToggle:hover {
+    background: #c00;
+}
+
+#contactToggle svg {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    transition: transform 0.35s ease;
+}
+
+#contactPanel.retracted #contactToggle svg {
+    transform: rotate(180deg);
+}
+
+.contact-inner {
+    padding: 1.15rem;
+}
+
+.contact-title {
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    color: #ff4d4d;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 7px 6px;
+    color: #f2f2f2;
+    text-decoration: none;
+    font-size: 15px;
+    text-align: left;
+    border: 1px solid transparent;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.contact-link:hover {
+    background: rgba(255, 0, 0, 0.12);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.contact-icon {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+    flex-shrink: 0;
+}
+
+.contact-name {
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    color: #bdbdbd;
+    font-size: 0.9rem;
+    font-style: italic;
+    letter-spacing: 1px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    body {
+        font-size: 17px;
+    }
+
+    .brand {
+        font-size: 1.15rem;
+        letter-spacing: 1.5px;
+        padding: 6px 12px;
+    }
+
+    .top-nav {
+        gap: 0.25rem 1rem;
+    }
+
+    .top-nav a {
+        font-size: 0.8rem;
+    }
+
+    .menu {
+        flex-direction: column;
+    }
+
+    .menu-card,
+    .menu-card.featured {
+        flex-basis: auto;
+        width: 100%;
+        max-width: 340px;
+        min-height: 190px;
+        padding: 1.5rem;
+    }
+
+    .page {
+        padding: 1rem 1.25rem 3rem;
+    }
+
+    .page h1 {
+        font-size: 1.8rem;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    #contactPanel {
+        width: 230px;
+    }
+
+    .contact-link {
+        font-size: 14px;
+    }
+}
